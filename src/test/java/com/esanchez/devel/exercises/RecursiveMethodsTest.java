@@ -1,5 +1,6 @@
 package com.esanchez.devel.exercises;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -43,5 +44,20 @@ public class RecursiveMethodsTest {
 		assertTrue(result4);
 		assertFalse(result5);
 		assertFalse(result6);
+	}
+	
+	@Test
+	void validatePower() {
+		double result1 = recursiveMethods.power(2, 3);
+		double result2 = recursiveMethods.power(5, 0);
+		double result3 = recursiveMethods.power(10, 1);
+		double result4 = recursiveMethods.power(2, -2);
+		double result5 = recursiveMethods.power(4, -1);
+		
+		assertEquals(8.0, result1);
+		assertEquals(1.0, result2);
+		assertEquals(10.0, result3);
+		assertEquals(0.25, result4);
+		assertEquals(0.25, result5);
 	}
 }

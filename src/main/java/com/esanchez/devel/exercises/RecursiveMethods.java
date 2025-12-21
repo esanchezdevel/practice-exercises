@@ -43,7 +43,7 @@ public class RecursiveMethods {
 	/**
 	 * Exercise 2
 	 * Write a recursive method that checks whether a given string is a palindrome.
-	 *A string is a palindrome if it reads the same forwards and backwards.
+	 * A string is a palindrome if it reads the same forwards and backwards.
 	 */
 	public boolean isPalindrome(String text) {
 		int position = 0;
@@ -67,6 +67,33 @@ public class RecursiveMethods {
 			return recursiveCheckPalindrome(text, position);
 		} else {
 			return false; // it's not a palindrome
+		}
+	}
+	
+	/**
+	 * Exercise 3
+	 * Power Funtion: Write a recursive method that computes the value of a number raised to a power.
+	 * Assume that base ≠ 0 when exponent < 0 (no need to handle division by zero)
+	 */
+	public double power(double base, int exponent) {
+		double aggregate = base;
+		return recursivePower(base, aggregate, exponent);
+	}
+	
+	private double recursivePower(double base, double aggregate, int exponent) {
+		
+		if (exponent == 0)
+			return 1.0;
+		
+		if (exponent == 1)
+			return aggregate;
+		
+		if (exponent > 0) {
+			aggregate = aggregate * base;
+			exponent--;
+			return recursivePower(base, aggregate, exponent);
+		} else {
+			return (1.0 / recursivePower(base, aggregate, -exponent));
 		}
 	}
 }
