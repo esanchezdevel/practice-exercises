@@ -19,7 +19,21 @@ public class SortMethodsTest {
 		assertNotNull(output);
 		assertEquals(5, output.length);
 		for (int i = 0; i < output.length; i++) {
-			assertEquals(input[i], output[i]);
+			assertEquals(expected[i], output[i]);
+		}
+	}
+	
+	@Test
+	void validateMergeSort() {
+		int[] input = {5, 1, 4, 2, 8};
+		int[] output = sortMethods.mergeSort(input);
+		
+		int[] expected = {1, 2, 4, 5, 8};
+		
+		assertNotNull(output);
+		assertEquals(5, output.length);
+		for (int i = 0; i < output.length; i++) {
+			assertEquals(expected[i], output[i]);
 		}
 	}
 }
