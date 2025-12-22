@@ -1,9 +1,6 @@
 package com.esanchez.devel.exercises;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * In this class I will practice exercises with sort algorithms
@@ -122,10 +119,5 @@ public class SortMethods {
 		while (j < right.length) result[k++] = right[j++];
 		
 		return result;
-	}
-
-	private void printArray(int[] array) {
-		for (int i = 0; i < array.length; i++) System.out.print(array[i] + ",");
-		System.out.println("");
 	}
 }

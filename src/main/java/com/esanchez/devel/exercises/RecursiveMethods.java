@@ -23,7 +23,6 @@ public class RecursiveMethods {
 	private boolean recursiveCheck(String text, int position, int currentNumberOfOpeningCharacters) {
 		
 		if (text.length() == position) {
-			System.out.println("finalizing recursion");
 			return currentNumberOfOpeningCharacters == 0;
 		}
 		
