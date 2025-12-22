@@ -88,5 +88,44 @@ public class SortMethods {
 		
 		return result;
 	}
+	
+	/**
+	 * Repeat Exercise 2 of Merge sort, but this time do it without help
+	 * Divide & Conquer
+	 */
+	public int[] mergeSort2(int[] input) {
+		
+		if (input.length == 0 || input.length == 1) return input;
+		
+		int middle = input.length / 2;
+		
+		int[] left = Arrays.copyOfRange(input, 0, middle);
+		int[] right = Arrays.copyOfRange(input, middle, input.length);
+		
+		left = mergeSort2(left);
+		right = mergeSort2(right);
+		
+		return merge2(left, right);
+	}
+	
+	private int[] merge2(int[] left, int[] right) {
+		int[] result = new int[left.length + right.length];
+		
+		int i = 0, j = 0, k = 0; //i for left, j for right, k for result
+		
+		while (i < left.length && j < right.length) {
+			if (left[i] <= right[j]) result[k++] = left[i++];
+			else result[k++] = right[j++];
+		}
+		
+		while (i < left.length) result[k++] = left[i++];
+		while (j < right.length) result[k++] = right[j++];
+		
+		return result;
+	}
 
+	private void printArray(int[] array) {
+		for (int i = 0; i < array.length; i++) System.out.print(array[i] + ",");
+		System.out.println("");
+	}
 }
