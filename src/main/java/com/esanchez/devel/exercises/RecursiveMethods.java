@@ -96,4 +96,47 @@ public class RecursiveMethods {
 			return (1.0 / recursivePower(base, aggregate, -exponent));
 		}
 	}
+	
+	/**
+	 * Exercise 4
+	 * Write a recursive function that calculates the sum of the first n natural numbers.
+	 * Examples:
+	 * sum(1) → 1
+	 * sum(3) → 1 + 2 + 3 = 6
+	 * sum(5) → 15
+	 */
+	public int calculateSumOfNaturalNumbers(int n) {
+		return recursiveSum(n);
+	}
+	
+	private int recursiveSum(int n) {
+		
+		if (n == 0)
+			return n;
+		
+		return n + recursiveSum(n - 1);
+	}
+	
+	/**
+	 * Exercise 5
+	 * Write a recursive function that calculates the factorial of a non-negative integer n.
+	 * Examples:
+	 * factorial(0) → 1
+	 * factorial(1) → 1
+	 * factorial(5) → 5 × 4 × 3 × 2 × 1 = 120
+	 */
+	public int calculateFactorial(int n) {
+		return recursiveFactorial(n);
+	}
+	
+	private int recursiveFactorial(int n) {
+		
+		if (n < 0)
+			throw new IllegalArgumentException("The value of n must be non-negative");
+		
+		if (n == 0)
+			return 1;
+		
+		return n * recursiveFactorial(n - 1);
+	}
 }

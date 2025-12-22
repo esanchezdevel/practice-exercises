@@ -60,4 +60,28 @@ public class RecursiveMethodsTest {
 		assertEquals(0.25, result4);
 		assertEquals(0.25, result5);
 	}
+	
+	@Test
+	void validateSumNaturalNumbers() {
+		int result1 = recursiveMethods.calculateSumOfNaturalNumbers(0);
+		int result2 = recursiveMethods.calculateSumOfNaturalNumbers(1);
+		int result3 = recursiveMethods.calculateSumOfNaturalNumbers(3);
+		int result4 = recursiveMethods.calculateSumOfNaturalNumbers(5);
+		
+		assertEquals(0, result1);
+		assertEquals(1, result2);
+		assertEquals(6, result3);
+		assertEquals(15, result4);
+	}
+	
+	@Test
+	void validateFactorial() {
+		int result1 = recursiveMethods.calculateFactorial(0);
+		int result2 = recursiveMethods.calculateFactorial(1);
+		int result3 = recursiveMethods.calculateFactorial(5);
+		
+		assertEquals(1, result1);
+		assertEquals(1, result2);
+		assertEquals(120, result3);
+	}
 }
