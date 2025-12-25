@@ -1,6 +1,9 @@
 package com.esanchez.devel.exercises.daily;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class Exercises20251225 {
 
@@ -33,5 +36,9 @@ public class Exercises20251225 {
 		while (j < right.length) result[k++] = right[j++];
 		
 		return result;
+	}
+	
+	public int[] sortArrayWithStream(int[] input) {
+		return  Arrays.stream(input).sorted().toArray();
 	}
 }
